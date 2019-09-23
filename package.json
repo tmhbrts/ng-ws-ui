@@ -2,12 +2,7 @@
   "name": "ng-ws-ui",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build-and-run": "ng build --output-path=wss/public; pushd wss; tsc; node dist/server.js; popd;"
   },
   "private": true,
   "dependencies": {
