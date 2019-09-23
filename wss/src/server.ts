@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as WebSocket from 'ws';
+import { UIEvent } from './lib/ui-event';
  
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.static('public'));
 wss.on('connection', (ws: WebSocket) => {
     console.log('new connection');
 
-    ws.on('message', (message: string) => {
-        console.log('received message' + message);
+    ws.on('message', (e: UIEvent) => {
+        console.log('received UI event' + e);
     });
 });

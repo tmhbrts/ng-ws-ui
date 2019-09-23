@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UIEvent } from '@wss/ui-event';
 
 @Component({
   selector: 'app-root',
