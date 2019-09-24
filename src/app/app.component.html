@@ -6,6 +6,9 @@
   <title>ng-ws-ui</title>
 </head>
 <body>
-  test
+  <div>
+    <input type="checkbox" [(ngModel)]="switchState" (change)="toggleSwitch()" name="light_switch">
+    <label for="light_switch">Light Switch</label>
+  </div>
 </body>
 </html>
