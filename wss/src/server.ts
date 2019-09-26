@@ -16,6 +16,16 @@ wss.on('connection', (ws: WebSocket) => {
     console.log('new connection');
 
     ws.on('message', (e: UIEvent) => {
+        
         console.log('received UI event' + e);
+        wss.clients.forEach( (client) => {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+                client.send(e);
+            }
+        });
+    });
+
+    ws.on('close', function close() {
+        console.log('client disconnected');
     });
 });
