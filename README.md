@@ -20,7 +20,7 @@ This buids the angular project to path 'wss/public', then transpiles and runs th
 npm run serve
 ```
 
-##How to access the UI and WebSocket server:
+## How to access the UI and WebSocket server:
 
 **UI**: http://localhost:21040
 
