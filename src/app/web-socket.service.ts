@@ -10,10 +10,10 @@ export class WebSocketService {
   private subject: WebSocketSubject<UIEvent>;
 
   public send = (sender: string, content: string) => {
-    let e: UIEvent = new UIEvent(sender, content);
+    const e: UIEvent = new UIEvent(sender, content);
     this.subject.next(e);
   }
-  
+
   public connect = () => {
     return this.subject.subscribe(
       (e: UIEvent) => console.log('message received: ' + e.content),
@@ -21,8 +21,8 @@ export class WebSocketService {
       () => console.log('complete')
     );
   }
-  
-  constructor() { 
+
+  constructor() {
     this.subject = webSocket('ws://localhost:21040');
   }
 }

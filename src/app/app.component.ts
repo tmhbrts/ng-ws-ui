@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WebSocketService } from './web-socket.service'
+import { WebSocketService } from './web-socket.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { WebSocketService } from './web-socket.service'
 })
 export class AppComponent implements OnInit {
   title = 'ng-ws-ui';
-  switchState: boolean = false;
+  switchState = false;
 
   toggleSwitch = () => {
     this.switchState ? this.switchOn() : this.switchOff();
