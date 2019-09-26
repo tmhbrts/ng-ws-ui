@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build-and-serve": "ng build --output-path=wss/public; pushd wss; tsc; node dist/server.js; popd;",
-    "serve": "node wss/dist/server.js"
+    "serve": "pushd wss; tsc; node dist/server.js; popd;"
   },
   "private": true,
   "dependencies": {
