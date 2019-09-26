@@ -15,7 +15,11 @@ export class WebSocketService {
   }
   
   public connect = () => {
-    return this.subject.subscribe();
+    return this.subject.subscribe(
+      (e: UIEvent) => console.log('message received: ' + e.content),
+      err => console.log(err),
+      () => console.log('complete')
+    );
   }
   
   constructor() { 
